@@ -1,0 +1,31 @@
+<app-r-header></app-r-header>
+
+<!--New Referrals-->
+<div class="container" id="mycontainer">
+  <div class="row">
+    <div  *ngFor="let referral of referrals; let i =index"class="col-md-12 col-xl-3">
+       <div *ngIf ="referral.approved==false" class="card m-b-30">
+          <div class="card-body" style="text-align: center;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>{{referral.name}}</b></li>
+           </ul>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Email:</b> {{referral.email}}</li>
+            <li class="list-group-item"><b>Id:</b> {{referral.id}}</li>
+            <li class="list-group-item"><b>Resume:</b><span style="margin-left: 10px;"><button (click)="downloadFile(referral.id)"style="background-color: #696969;padding: 5px;color: black;" >VIEW</button></span></li>
+            <li class="list-group-item"><i class="float-right"></i><b>Role:</b> Software Engineer</li>
+            <li class="list-group-item"><i class="float-right"></i><b>Location:</b> Bangalore</li>
+          </ul>
+          <div class="card-body" style="text-align: center;">
+            <div class="btn-group btn-group-sm">
+             <button (click)="updateStage(referral.id)" style="background-color: #09f344;padding: 5px;color: black;" class="btn btn-primary tooltips" data-placement="top" data-original-title="Refer">ACCEPT</button>
+            </div>
+            <div class="btn-group btn-group-sm" style="margin-left: 10px;">
+              <button (click)="onReject(referral.id)" style="background-color: #e20707;padding: 5px;color: black;" class="btn btn-primary tooltips" data-placement="top" data-original-title="Refer">REJECT</button>
+             </div>
+         </div>
+       </div>
+    </div>
+  </div>
+  </div>

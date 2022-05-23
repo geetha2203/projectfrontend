@@ -1,0 +1,21 @@
+<app-e-header></app-e-header>
+
+<!--Home Content-->
+<div class="container" id="mycontainer">
+  <div class="row">
+    <div class="col-md-12 col-xl-12">
+       <div class="card m-b-30">
+          <div class="card-body" style="text-align: center;">
+            <ul class="list-group">
+              <li class="list-group-item"><b>Recent Candidates</b></li>
+           </ul>
+          </div>
+          <div *ngFor="let referral of referrals; let i =index" class="card-body" style="text-align: center;">
+            <ul *ngIf ="i>=referrals.length -5" class="list-group list-group-flush">
+              <li class="list-group-item">{{referral.name}}</li>
+      
+           </ul>
+          </div>
+       </div>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+<app-e-header></app-e-header>
+
+  <!--Leader Board-->
+  <div class="container" id="mycontainer" style="background-color: white;">
+    <div class="row">
+      <div class="col-md-12 col-xl-12">
+      <table class="table">
+        <thead>
+          <th>Employee Id</th>
+          <th>Number Of Referrals</th>
+        </thead>
+    <tbody *ngFor="let x of referrals; let i =index">
+
+        <tr>
+          <td>{{x[0]}}</td>
+          <td>{{x[1]}}</td>
+          <td></td>
+      </tr>
+       
+
+
+    </tbody>
+  </table>
+      </div>
+    </div>
+    </div>
